@@ -3,9 +3,9 @@ import gradio as gr
 
 def trim_words(words, lens):
     trimmed_words = []
-    for w, l in zip(words, lens):
-        end = min(int(l), len(w))
-        trimmed_words.append(w[:end])
+    for word, length in zip(words, lens):
+        end = min(int(length), len(word))
+        trimmed_words.append(word[:end])
     return [trimmed_words]
 
 

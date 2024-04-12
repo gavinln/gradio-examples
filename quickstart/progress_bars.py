@@ -14,8 +14,6 @@ def slowly_reverse(word, progress=gr.Progress()):
     return new_string
 
 
-demo = gr.Interface(
-    fn=slowly_reverse, inputs=gr.Text(),  outputs=gr.Text()
-)
+demo = gr.Interface(fn=slowly_reverse, inputs=gr.Text(), outputs=gr.Text())
 
 demo.launch()

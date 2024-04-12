@@ -1,5 +1,3 @@
-import time
-
 import gradio as gr
 
 
@@ -13,8 +11,6 @@ def alert_modal(name):
         raise gr.Error("Process failed")
 
 
-demo = gr.Interface(
-    fn=alert_modal, inputs=gr.Text(),  outputs=gr.Textbox()
-)
+demo = gr.Interface(fn=alert_modal, inputs=gr.Text(), outputs=gr.Textbox())
 
 demo.launch()

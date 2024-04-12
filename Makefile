@@ -53,3 +53,17 @@ mount-within-fastapi:  ## mount within a FastAPI app
 .PHONY: fixed-password
 fixed-password:  ## password protect app with a fixed password
 	poetry run python quickstart/fixed_password.py
+
+.PHONY: clean
+clean:  ## removes temporary files
+	rm -f .aider.chat.history.md
+	rm -f .aider.input.history
+	rm -f quickstart/__pycache__/
+	rm -f .ruff_cache/
+	rm -f .mypy_cache/
+
+.PHONY: check
+check:  ## run code checks
+	mypy --ignore-missing-imports .
+	ruff check
+	black -l 79 --check .
