@@ -68,3 +68,11 @@ mount-within-fastapi:  ## mount within a FastAPI app
 .PHONY: fixed-password
 fixed-password:  ## password protect app with a fixed password
 	poetry run python quickstart/fixed_password.py
+
+.PHONY: component-attributes
+component-attributes:  ## set attributes of components
+	poetry run python interface/component_attributes.py
+
+.PHONY: multiple-input-output
+multiple-input-output:  ## set attributes of components
+	poetry run python interface/multiple_input_output.py
