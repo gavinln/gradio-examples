@@ -1,5 +1,8 @@
 SCRIPT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
+# run in the bash shell
+SHELL := /bin/bash
+
 .PHONY: help
 .DEFAULT_GOAL=help
 help:  ## help for this Makefile
@@ -33,3 +36,12 @@ batch-functions:  ## batch functions
 .PHONY: access-network-object
 access-network-object:  ## access the network object
 	poetry run python quickstart/access_network_object.py
+
+.PHONY: mount-within-fastapi
+mount-within-fastapi:  ## mount within a FastAPI app
+	echo visit http://127.0.0.1:8000/, urls / and /gradio
+	pushd quickstart && poetry run uvicorn mount_within_fastapi:app && popd
+
+.PHONY: fixed-password
+fixed-password:  ## password protect app with a fixed password
+	poetry run python quickstart/fixed_password.py
