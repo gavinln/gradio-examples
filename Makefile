@@ -8,6 +8,21 @@ SHELL := /bin/bash
 help:  ## help for this Makefile
 	@grep -E '^[a-zA-Z0-9_\-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+.PHONY: clean
+clean:  ## removes temporary files
+	rm -f .aider.chat.history.md
+	rm -f .aider.input.history
+	rm -rf .aider.tags.cache.v3/
+	rm -rf quickstart/__pycache__/
+	rm -rf .ruff_cache/
+	rm -rf .mypy_cache/
+
+.PHONY: check
+check:  ## run code checks
+	mypy --ignore-missing-imports .
+	ruff check
+	black -l 79 --check .
+
 .PHONY: aider
 aider:  ## run aider to modify code using AI
 	aider -4 --no-auto-commits --no-dirty-commits
@@ -53,18 +68,3 @@ mount-within-fastapi:  ## mount within a FastAPI app
 .PHONY: fixed-password
 fixed-password:  ## password protect app with a fixed password
 	poetry run python quickstart/fixed_password.py
-
-.PHONY: clean
-clean:  ## removes temporary files
-	rm -f .aider.chat.history.md
-	rm -f .aider.input.history
-	rm -rf .aider.tags.cache.v3/
-	rm -rf quickstart/__pycache__/
-	rm -rf .ruff_cache/
-	rm -rf .mypy_cache/
-
-.PHONY: check
-check:  ## run code checks
-	mypy --ignore-missing-imports .
-	ruff check
-	black -l 79 --check .
