@@ -12,6 +12,14 @@ help:  ## help for this Makefile
 aider:  ## run aider to modify code using AI
 	aider -4 --no-auto-commits --no-dirty-commits
 
+.PHONY: poetry-create
+poetry-create:  ## RUN FIRST. Setup the Python poetry environment
+	poetry install
+
+.PHONY: poetry-delete
+poetry-delete:  ## Deletes the Python poetry environment
+	poetry env remove $$(poetry env list | cut -d ' ' -f 1)
+
 .PHONY: quickstart
 quickstart:  ## quickstart gradio example
 	@echo open browser to http://127.0.0.1:7860
