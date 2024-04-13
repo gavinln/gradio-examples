@@ -80,3 +80,7 @@ multiple-input-output:  ## multiple inputs and outputs
 .PHONY: image-example
 image-example:  ## image modification example
 	poetry run python interface/$@.py
+
+.PHONY: example-calculator
+example-calculator:  ## multiple inputs for a calculator
+	poetry run python interface/$@.py
