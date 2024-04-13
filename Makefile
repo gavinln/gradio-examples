@@ -90,15 +90,21 @@ accordion-inputs:  ## additional inputs in an accordion
 	poetry run python interface/$@.py
 
 .PHONY: output-only-demo
-output-only-demo:  ## additional inputs in an accordion
+output-only-demo:  ## output only components
 	poetry run python interface/$@.py
 
 .PHONY: input-only-demo
-input-only-demo:  ## additional inputs in an accordion
+input-only-demo:  ## input only components
 	poetry run python interface/$@.py
 
 .PHONY: unified-input-output
-unified-input-output:  ## additional inputs in an accordion
+unified-input-output:  ## unified input and output
 	poetry run python interface/$@.py
 
+.PHONY: global-state
+global-state:  ## global state
+	poetry run python interface/$@.py
 
+.PHONY: session-state
+session-state:  ## session state
+	poetry run python interface/$@.py
