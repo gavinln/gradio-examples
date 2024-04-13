@@ -84,3 +84,8 @@ image-example:  ## image modification example
 .PHONY: example-calculator
 example-calculator:  ## multiple inputs for a calculator
 	poetry run python interface/$@.py
+
+
+.PHONY: accordion-inputs
+accordion-inputs:  ## additional inputs in an accordion
+	poetry run python interface/$@.py
