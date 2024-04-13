@@ -71,8 +71,12 @@ fixed-password:  ## password protect app with a fixed password
 
 .PHONY: component-attributes
 component-attributes:  ## set attributes of components
-	poetry run python interface/component_attributes.py
+	poetry run python interface/$@.py
 
 .PHONY: multiple-input-output
-multiple-input-output:  ## set attributes of components
-	poetry run python interface/multiple_input_output.py
+multiple-input-output:  ## multiple inputs and outputs
+	poetry run python interface/$@.py
+
+.PHONY: image-example
+image-example:  ## image modification example
+	poetry run python interface/$@.py
