@@ -102,9 +102,9 @@ unified-input-output:  ## unified input and output
 	poetry run python interface/$@.py
 
 .PHONY: global-state
-global-state:  ## global state
+global-state:  ## global state for top 3 scores
 	poetry run python interface/$@.py
 
 .PHONY: session-state
-session-state:  ## session state
+session-state:  ## session state for text in reverse order
 	poetry run python interface/$@.py
