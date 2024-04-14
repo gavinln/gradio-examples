@@ -108,3 +108,31 @@ global-state:  ## global state for top 3 scores
 .PHONY: session-state
 session-state:  ## session state for text in reverse order
 	poetry run python interface/$@.py
+
+.PHONY: live-interfaces
+live-interfaces:  ## live interfaces, no clicking submit
+	poetry run python interface/$@.py
+
+.PHONY: streaming-components
+streaming-components:  ## streaming components
+	poetry run python interface/$@.py
+
+.PHONY: blocks-structure
+blocks-structure:  ## blocks structure
+	poetry run python blocks/$@.py
+
+.PHONY: change-event
+change-event:  ## listen to change event
+	poetry run python blocks/$@.py
+
+.PHONY: multiple-data-flows
+multiple-data-flows:  ## multiple data flows
+	poetry run python blocks/$@.py
+
+.PHONY: input-list-and-dict
+input-list-and-dict:  ## input as a list and dict
+	poetry run python blocks/$@.py
+
+.PHONY: return-list-and-dict
+return-list-and-dict:  ## return as a list and dict
+	poetry run python blocks/$@.py
