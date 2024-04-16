@@ -136,3 +136,11 @@ input-list-and-dict:  ## input as a list and dict
 .PHONY: return-list-and-dict
 return-list-and-dict:  ## return as a list and dict
 	poetry run python blocks/$@.py
+
+.PHONY: update-component
+update-component:  ## change component
+	poetry run python blocks/$@.py
+
+.PHONY: blocks-calculator
+blocks-calculator:  ## calculator in multiple blocks
+	poetry run python blocks/$@.py
