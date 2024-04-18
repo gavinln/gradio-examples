@@ -144,3 +144,29 @@ update-component:  ## change component
 .PHONY: blocks-calculator
 blocks-calculator:  ## calculator in multiple blocks
 	poetry run python blocks/$@.py
+
+.PHONY: consecutive-events
+consecutive-events:  ## consecutive events: event listener then method
+	poetry run python blocks/$@.py
+
+.PHONY: continuous-events
+continuous-events:  ## continuous events: every parameter for change method
+	poetry run python blocks/$@.py
+
+.PHONY: gather-events
+gather-events:  ## gather events data
+	poetry run python blocks/$@.py
+
+.PHONY: multiple-triggers
+multiple-triggers:  ## multiple triggers, one function
+	poetry run python blocks/$@.py
+
+.PHONY: multiple-change-events
+multiple-change-events:  ## change events are the default
+	poetry run python blocks/$@.py
+
+# TODO: add examples for layout in blocks
+# https://www.gradio.app/guides/controlling-layout
+
+# TODO: add examples for state in blocks
+# https://www.gradio.app/guides/state-in-blocks

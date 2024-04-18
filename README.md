@@ -11,3 +11,9 @@ https://www.gradio.app/guides/quickstart
 ## Building interfaces
 
 https://www.gradio.app/guides/the-interface-class
+
+## Blocks
+
+Blocks offer a low-level approach to desing web apps with more flexible layouts.
+
+https://www.gradio.app/guides/blocks-and-event-listeners
